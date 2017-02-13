@@ -5,6 +5,14 @@ function Locker (roundNumber, isOpen) {
   this.isOpen = isOpen;
 }
 
+Locker.prototype.openLocker = function() {
+  this.isOpen = true;
+};
+
+Locker.prototype.closeLocker = function() {
+  this.isOpen = true;
+};
+
 // Create lockers array, then create each locker in loop and set all to closed
 var lockers = [];
 for (var x = 0; x <= 100; x++) {
@@ -16,10 +24,10 @@ for (var x = 1; x <= 100; x++) {
   for (var i = 1; i <= 100; i++) {
     if (x % i === 0) {
       if(lockers[x].isOpen) {
-        lockers[x].isOpen = false;
+        lockers[x].closeLocker();
       }
       else if(!(lockers[x].isOpen)) {
-        lockers[x].isOpen = true;
+        lockers[x].openLocker();
       }
     }
   }
