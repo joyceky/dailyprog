@@ -1,7 +1,7 @@
 'use strict';
 // Locker Object Constructor
-function Locker (roundNumber, isOpen) {
-  this.toggleRound = roundNumber;
+function Locker (toggleRound, isOpen) {
+  this.toggleRound = toggleRound;
   this.isOpen = isOpen;
 }
 
@@ -10,7 +10,7 @@ Locker.prototype.openLocker = function() {
 };
 
 Locker.prototype.closeLocker = function() {
-  this.isOpen = true;
+  this.isOpen = false;
 };
 
 // Create lockers array, then create each locker in loop and set all to closed
